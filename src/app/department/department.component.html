@@ -1,0 +1,20 @@
+<button class="btn btn-info">Operation</button>
+<a routerLink = "/department/add"> Add </a>
+
+<table class="table table-boardered table-hover">
+    <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th colspan="3">Operation</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of depts | paginate :{ itemsPerPage : 5 , currentPage : p }  ">
+            <td>{{item._id}}</td>
+            <td>{{item.Name}}</td>
+            <td><a [routerLink]="['/department/detail/',item._id]"> Detail </a></td>
+            <td><a [routerLink]="['/department/edit/',item._id]"> Edit </a></td>
+            <td><a (click)="delete(item._id)" class="btn btn-danger "> Delete </a></td>
+        </tr>
+    </tbody>
+</table>
+<pagination-controls (pageChange)="p= $event" style="position:sticky;"></pagination-controls>

@@ -1,0 +1,17 @@
+<div class="col-3">
+    <h3>Add New Deptartment </h3>
+    <div class="form-horizintal">
+        <div class="form-group">
+            <label for="Id" class="clo-4" class="form-contrl">ID</label>
+            <input id="Id" [(ngModel)] = "nDept._id" type="number" class="form-contrl">
+        </div>
+        <div class="form-group">
+            <label for="Name" class="clo-4"class="form-contrl" >Name</label>
+            <input id="Name" [(ngModel)] = "nDept.Name" class="form-contrl">
+        </div>
+        <div class="form-group">
+            <button (click)="save()">Add</button>
+        </div>
+    
+    </div>
+    </div>
